@@ -50,10 +50,16 @@ That's it :)
 
     gem install migajas
 
+## Do we need a gem for this?
+
+Probably not, but after 2 years of using this code, I got bored of copying and
+pasting it from [a gist](https://gist.github.com/foca/44c9f24a759238fba9fb).
+
 ## What's in a name?
 
 `Migajas` is the Spanish word for `breadcrumbs`. It's pronounced like you'd
-pronounce `meegahas` in English (or `miˈɣa.xas` if you're a language nerd.)
+pronounce `me-gha-has` in English (`me` as in the word "me", `gha` as in
+"ghast", and `has` as the word "has".)
 
 ## License
 
