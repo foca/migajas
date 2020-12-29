@@ -1,3 +1,4 @@
+require_relative "migajas/version"
 require_relative "migajas/rails" if defined?(Rails)
 
 module Migajas
