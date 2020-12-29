@@ -1,4 +1,13 @@
+require_relative "migajas/rails" if defined?(Rails)
+
 module Migajas
+  # Public: Reader method to get the Rack env. Override if your framework does
+  # not expose an `env` method in the context used when evaluating routing
+  # actions or views (such as Rails).
+  def migajas_env
+    env
+  end
+
   # Public: List of breadcrumbs encountered in this request. Add to this list
   # any breadcrumb as you go through your routing tree in the app:
   #
@@ -41,7 +50,7 @@ module Migajas
   #
   # Returns a Migajas::Trail.
   def breadcrumbs
-    env["app.breadcrumbs"] ||= Trail.new(env)
+    migajas_env["app.breadcrumbs"] ||= Trail.new(migajas_env)
   end
 
   # The Trail is just an `env`-aware Array, with some convenient sugar for
