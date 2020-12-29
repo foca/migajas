@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.licenses    = ["MIT"]
   s.version     = Migajas::VERSION
   s.summary     = "Breadcrumbs for your Rack app"
-  s.description = "Simple library to add breadcrumbs to your Cuba/Roda app"
+  s.description = "Simple library to add breadcrumbs to your Rack app"
   s.authors     = ["Nicolas Sanguinetti"]
   s.email       = ["foca@foca.io"]
   s.homepage    = "http://github.com/foca/migajas"
@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
     "LICENSE",
     "README.md",
     "lib/migajas.rb",
+    "lib/migajas/rails.rb",
     "lib/migajas/version.rb",
   ]
 
