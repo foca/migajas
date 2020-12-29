@@ -1,7 +1,8 @@
 # Migajas
 
-Migajas is a tiny library for adding breadcrumbs to a routing tree framework,
-like Cuba or Roda.
+Migajas is a tiny library for adding breadcrumbs to any Rack application. It was
+designed with routing tree frameworks like Cuba or Roda in mind, but works well
+with any Rack-based framework, including Rails.
 
 ## Usage
 
@@ -45,6 +46,45 @@ Then, in the view, go over the `breadcrumbs` list:
 ```
 
 That's it :)
+
+## Rails
+
+Start by adding `Migajas::Rails` to your controllers:
+
+``` ruby
+class ApplicationController < ActionController::Base
+  include Migajas::Rails
+end
+```
+
+This gives you a `breadcrumbs` method that you can access from your controllers
+and views. The recommended approach is to use action callbacks to add
+breadcrumbs:
+
+``` ruby
+class ApplicationController < ActionController::Base
+  include Migajas::Rails
+
+  before_action { breadcrumbs.add "Home", root_path }
+end
+
+class UsersController < ApplicationController
+  before_action { breadcrumbs.add "Users", users_path }
+  before_action(only: [:show, :edit, :update]) { breadcrumbs.add @user.name, user_path(@user) }
+end
+```
+
+Then, in your layout, you can iterate over the Array:
+
+``` erb
+<ol class="breadcrumbs">
+  <% breadcrumbs.each do |crumb| %>
+    <%= tag.li class: { active: crumb.current? } do %>
+      <%= link_to crumb.name, crumb.url %>
+    <% end %>
+  <% end %>
+</ol>
+```
 
 ## Install
 

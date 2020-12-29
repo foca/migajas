@@ -1,4 +1,3 @@
-require "rails/engine"
 require "migajas"
 
 module Migajas
@@ -46,14 +45,6 @@ module Migajas
 
     def migajas_env # :nodoc:
       request.env
-    end
-  end
-
-  class Engine < ::Rails::Engine # :nodoc:
-    initializer "migajas.helpers" do
-      ActiveSupport.on_load(:action_controller_base) do
-        include Migajas::Rails
-      end
     end
   end
 end

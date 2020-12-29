@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.name        = "migajas"
   s.licenses    = ["MIT"]
   s.version     = Migajas::VERSION
-  s.summary     = "Breadcrumbs for your Cuba/Roda app"
+  s.summary     = "Breadcrumbs for your Rack app"
   s.description = "Simple library to add breadcrumbs to your Cuba/Roda app"
   s.authors     = ["Nicolas Sanguinetti"]
   s.email       = ["foca@foca.io"]
