@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.summary     = "Breadcrumbs for your Cuba/Roda app"
   s.description = "Simple library to add breadcrumbs to your Cuba/Roda app"
   s.authors     = ["Nicolas Sanguinetti"]
-  s.email       = ["contacto@nicolassanguinetti.info"]
+  s.email       = ["foca@foca.io"]
   s.homepage    = "http://github.com/foca/migajas"
 
   s.files = Dir[
